@@ -1,7 +1,7 @@
 
 # Business Intelligence Capability inclusion using Apache Superset into an existing Grails OLTP web application
 
-Business Intelligence capabilities are crucial for echelons to take informed decisions and draw insights about the various facets of business. This project enumeratessteps and nuances of incorporating Business Intelligence capabilities using Apache Superset and embed the same into an existing OLTP application built using Grails.
+Business Intelligence capabilities are crucial for echelons to take informed decisions and draw insights about the various facets of business. This project enumerates steps and nuances of incorporating Business Intelligence capabilities using Apache Superset and embed the same into an existing OLTP application built using Grails.
 
 
 
