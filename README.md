@@ -173,6 +173,26 @@ The known configuration of Gunicorn known to be running fine, as mentioned in Of
       "superset.app:create_app()"
 ```
 
+## Custom Role Creation
+It is not at all advisable to edit the permissions set for the default roles given by Superset like Gamma, Public, Alpha etc. Even if you edit the permissions and run ```superset init``` all the default perissions will be reset. It is good to create a new role and assign only those permissions that are required to be given to the end user. PRINCIPLE OF LEAST PRIVILEDGE.
+
+## Security Implementation
+As Superset is built on Flask, we can take advantage of the TALISMAN settings towards incorporating protetcion against various secuirty threats. 
+Set the following settings :-
+
+```bash
+TALISMAN_ENABLED = True
+
+TALISMAN_CONFIG = {
+'content-secuirty-policy' : None, # Set your custom CSP here to restrict various things like default-src, img-src, worker-src, connect-src, object-src etc
+'x_xss_protection': True # Enable xxs protection
+'x_content_type_options' : True, # MIME Sniffing attack protetcion
+'session_cookie_http_only': True, # Setting cookie to httponly, to prevent it to be read by Javascripts
+'force_https' : False # default True, forces all non-debug connects to https
+'frame_options_allow_from' : None, # default None, a string indicating the domains that are allowed to embed the site via iframe
+}
+```
+
 ## Caution
 
 In previous vulnerability reportsof Apache SUperset, enabling the ``` ENABLE_TEMPLATE_PROCESSING = True ``` has been known to be open to SQL Injection. SO be aware while using this option.
