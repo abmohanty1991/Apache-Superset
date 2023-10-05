@@ -176,6 +176,9 @@ The known configuration of Gunicorn known to be running fine, as mentioned in Of
 ## Custom Role Creation
 It is not at all advisable to edit the permissions set for the default roles given by Superset like Gamma, Public, Alpha etc. Even if you edit the permissions and run ```superset init``` all the default perissions will be reset. It is good to create a new role and assign only those permissions that are required to be given to the end user. PRINCIPLE OF LEAST PRIVILEDGE.
 
+## Dockerising Superset 
+Utilise the Dcokerfile for dockerising superset.
+
 ## Security Implementation
 As Superset is built on Flask, we can take advantage of the TALISMAN settings towards incorporating protetcion against various secuirty threats. 
 Set the following settings :-
